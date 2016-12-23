@@ -29,6 +29,8 @@ class Task: NSObject {
     
     typealias CompletionHandler = (_ state: State)->()
     typealias ProgressHandler = (_ percent: Float)->()
+    typealias TaskCompleteBlock = (_ state: State.CompletionState)->()
+    typealias TaskWorkBlock = (_ complete: TaskCompleteBlock)->()
     
     final class func with(ID identifier: String) -> Task? {
         return nil
@@ -56,7 +58,7 @@ class Task: NSObject {
         
     }
     
-    init(withWork workBlock: ()->()) {
+    init(withWork workBlock: TaskWorkBlock) {
         super.init()
     }
     
@@ -74,7 +76,7 @@ class MultiTask: Task {
     var stopIfAnyFail = false
     
     init(withTasks tasks: [Task]) {
-        super.init {
+        super.init { (complete) in
             // (figure out how to run tasks together)
         }
     }
@@ -131,9 +133,12 @@ class CustomTask: Task, TaskClass {
 }
 
 
-let task = Task() {
-    
+let task = Task() { (complete) in
+    complete(.successful)
 }
+task.start()
+
+let custom = CustomTask()
 
 
 
