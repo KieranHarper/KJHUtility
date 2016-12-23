@@ -3,6 +3,7 @@
 import UIKit
 
 protocol TaskClass {
+    func doWork()
     func willStart()
     func didStart()
     func willFinish()
@@ -29,27 +30,29 @@ class Task: NSObject {
     typealias CompletionHandler = (_ state: State)->()
     typealias ProgressHandler = (_ percent: Float)->()
     
-    class func with(ID identifier: String) -> Task? {
+    final class func with(ID identifier: String) -> Task? {
         return nil
     }
     
-    func cancel() {
+    final func cancel() {
         
     }
     
-    func start() {
-        
+    final func start() {
+        if let subclass = self as? TaskClass {
+            subclass.willStart()
+        }
     }
     
-    func start(afterTask task: Task, finishesWith states: [State.CompletionState] = []) {
+    final func start(afterTask task: Task, finishesWith states: [State.CompletionState] = []) {
         // (where empty means any state)
     }
     
-    func onProgress(_ handler: ProgressHandler) {
+    final func onProgress(_ handler: ProgressHandler) {
         
     }
     
-    func onCompletion(_ handler: CompletionHandler) {
+    final func onCompletion(_ handler: CompletionHandler) {
         
     }
     
@@ -65,7 +68,9 @@ class Task: NSObject {
 }
 
 class MultiTask: Task {
-    var maxParallelTasks = 0 // (0 == unlimited)
+    
+    fileprivate var _maxParallelTasks = 0 // (0 == unlimited)
+    
     var stopIfAnyFail = false
     
     init(withTasks tasks: [Task]) {
@@ -76,23 +81,52 @@ class MultiTask: Task {
 }
 
 class SerialTask: MultiTask {
-    override let maxParallelTasks {
-        return 1
+    
+    override init(withTasks tasks: [Task]) {
+        super.init(withTasks: tasks)
+        _maxParallelTasks = 1
     }
 }
 
 class ParallelTask: MultiTask {
     
-    init(withTasks tasks: [Task]) {
-        super.init {
-            // (chain the tasks together)
+    var maxNumberOfTasks: Int {
+        get {
+            return _maxParallelTasks
+        }
+        set {
+            _maxParallelTasks = newValue
         }
     }
-    
-    var stopIfAnyFail = false
 }
 
-class CustomTask: Task {
+
+
+
+
+
+
+class CustomTask: Task, TaskClass {
+    
+    internal func doWork() {
+        
+    }
+    
+    internal func didFinish() {
+        
+    }
+
+    internal func willFinish() {
+        
+    }
+
+    internal func didStart() {
+        
+    }
+
+    internal func willStart() {
+        
+    }
     
 }
 
