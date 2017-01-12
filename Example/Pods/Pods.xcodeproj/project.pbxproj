@@ -76,6 +76,7 @@
 		850FAC7757B64C91286A39FD7D0FAA98 /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E8C36BA4865751AB3994028E5BE98B /* Expectation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		87018F89EC8B67A9F5B6C58AF9D7865A /* HaveCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22155F3C9AB9685BF4ED3A389D109A /* HaveCount.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		8947EFA71E26FA8100DC6805 /* SafeDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8947EFA61E26FA8100DC6805 /* SafeDictionary.swift */; };
+		8947EFA91E274E3100DC6805 /* SafeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8947EFA81E274E3100DC6805 /* SafeArray.swift */; };
 		894AD58D1E1B696C00DED7A2 /* TicToc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894AD58C1E1B696C00DED7A2 /* TicToc.swift */; };
 		89AD78E4074EB23249969F39D82E8C28 /* CwlCatchBadInstruction.h in Headers */ = {isa = PBXBuildFile; fileRef = F9550ABBCFEA5EE7A657664A6BD9E1F7 /* CwlCatchBadInstruction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		92252787BCC66DFA7A47156D26AB8687 /* BeLogical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226C1AC4144C4405F39189731DF06CEC /* BeLogical.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -210,6 +211,7 @@
 		86806CF3A6F7FB54DF0EEB9134380E4E /* NMBExceptionCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMBExceptionCapture.m; path = Sources/NimbleObjectiveC/NMBExceptionCapture.m; sourceTree = "<group>"; };
 		88A9381D91255401863A2174DDDDC0A3 /* Nimble-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-prefix.pch"; sourceTree = "<group>"; };
 		8947EFA61E26FA8100DC6805 /* SafeDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeDictionary.swift; sourceTree = "<group>"; };
+		8947EFA81E274E3100DC6805 /* SafeArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeArray.swift; sourceTree = "<group>"; };
 		894AD58C1E1B696C00DED7A2 /* TicToc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicToc.swift; sourceTree = "<group>"; };
 		8BD3BF5EB0A249E68523B43B6402EA1C /* World.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = World.swift; path = Sources/Quick/World.swift; sourceTree = "<group>"; };
 		8C64DCE9D714CA88C06BDCC413FD3661 /* BeVoid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeVoid.swift; path = Sources/Nimble/Matchers/BeVoid.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 			children = (
 				894AD58C1E1B696C00DED7A2 /* TicToc.swift */,
 				8947EFA61E26FA8100DC6805 /* SafeDictionary.swift */,
+				8947EFA81E274E3100DC6805 /* SafeArray.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -764,6 +767,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8947EFA91E274E3100DC6805 /* SafeArray.swift in Sources */,
 				8947EFA71E26FA8100DC6805 /* SafeDictionary.swift in Sources */,
 				5A407C0313BA9EABE5FE9AA309B43C5F /* KJHUtility-dummy.m in Sources */,
 				894AD58D1E1B696C00DED7A2 /* TicToc.swift in Sources */,

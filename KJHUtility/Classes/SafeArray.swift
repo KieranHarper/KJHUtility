@@ -1,10 +1,16 @@
-//: Playground - noun: a place where people can play
+//
+//  SafeArray.swift
+//  Pods
+//
+//  Created by Kieran Harper on 12/1/17.
+//
+//
 
-import Foundation
+import UIKit
 
-// The purpose of this class is to wrap an Array and make it available via a concurrent read vs serial write mechanism so that it can be used safely withing multithreaded contexts. Because it's a wrapper, not all features of Array are exposed, but many could be added if needed. You can also get an unsafe copy of the underlying dictionary whenever you want to get fancier with it.
+// The purpose of this class is to wrap an Array and make it available via a concurrent read vs serial write mechanism so that it can be used safely withing multithreaded contexts. Because it's a wrapper, not all features of Array are exposed, but many could be added if needed. You can also get an unsafe copy of the underlying array whenever you want to get fancier with it.
 // Dispatch barriers are used to ensure that write access waits until all other read operations are finished, and any enqueued read operations wait for the write to complete.
-// NOTE: This has to be a class rather than a struct, due to the use of closures within queues, making this a little more different than a regular Dictionary.
+// NOTE: This has to be a class rather than a struct, due to the use of closures within queues, making this a little more different than a regular Array.
 public class SafeArray<Element>: CustomStringConvertible {
     
     
@@ -139,29 +145,3 @@ public class SafeArray<Element>: CustomStringConvertible {
         return toReturn
     }
 }
-
-
-var arr = [1,2,3,4]
-let a = SafeArray(fromUnsafeArray: arr)
-print(a)
-a[2] = 87
-print(a)
-if let b = a[1] {
-    print(b)
-}
-let c = a.toUnsafeArray()
-
-a.append(50)
-a.append(5)
-print(a)
-let d = a.removeFirst()
-let l = a.removeLast()
-a.append(60)
-a.append(5)
-print(a)
-a.remove { $0 < 10 }
-print(a)
-let r = a.contains { $0 == 50 }
-print(r)
-a.removeAll()
-print(a)
