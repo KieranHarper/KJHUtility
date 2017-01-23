@@ -1,4 +1,10 @@
-//: Playground - noun: a place where people can play
+//
+//  Misc.swift
+//  Pods
+//
+//  Created by Kieran Harper on 23/1/17.
+//
+//
 
 import Foundation
 
@@ -45,8 +51,3 @@ public class Misc: NSObject {
         return Bundle.main.preferredLocalizations.first!
     }
 }
-
-let appID = "1234"
-let docs = Misc.documentsDirectory()
-let view = Misc.getAppStoreViewLink(forAppID: appID)
-let rate = Misc.getAppStoreRateOrReviewLink(forAppID: appID)
