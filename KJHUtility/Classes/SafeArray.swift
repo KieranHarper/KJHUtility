@@ -6,7 +6,7 @@
 //
 //
 
-import UIKit
+import Foundation
 
 // The purpose of this class is to wrap an Array and make it available via a concurrent read vs serial write mechanism so that it can be used safely withing multithreaded contexts. Because it's a wrapper, not all features of Array are exposed, but many could be added if needed. You can also get an unsafe copy of the underlying array whenever you want to get fancier with it.
 // Dispatch barriers are used to ensure that write access waits until all other read operations are finished, and any enqueued read operations wait for the write to complete.

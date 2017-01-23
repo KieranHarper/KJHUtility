@@ -6,7 +6,7 @@
 //
 //
 
-import UIKit
+import Foundation
 
 /**
  Simple lock class for concurrency synchronization that allows locking and unlocking from more than one thread. Similar to NSLock but useful when you want one thread to wait for another rather than protecting access. A semaphore of 1 is used internally.
