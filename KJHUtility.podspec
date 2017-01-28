@@ -9,34 +9,17 @@
 Pod::Spec.new do |s|
   s.name             = 'KJHUtility'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of KJHUtility.'
+  s.summary          = 'A small set of random utilities written in Swift.'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.description      =  <<-DESC
+                        This is a small set of random utilities written in Swift. I plan to add more stuff here as I move some of my general reusable classes into Swift. The idea is this collection is platform agnostic however I typically only work on iOS so whether they're good for macOS or linux would require some testing.
+                        DESC
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/KJHUtility'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/KieranHarper/KJHUtility'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Kieran Harper' => 'kieranjharper@gmail.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/KJHUtility.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  s.source           = { :git => 'https://github.com/KieranHarper/KJHUtility.git', :tag => s.version.to_s }
   s.ios.deployment_target = '8.0'
-
   s.source_files = 'KJHUtility/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'KJHUtility' => ['KJHUtility/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'Foundation'
 end

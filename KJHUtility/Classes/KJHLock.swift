@@ -25,7 +25,7 @@ public class KJHLock: NSObject {
      Aquire access to the lock, waiting if it is already locked by someone else.
      */
     public func lock() {
-        _internalSemaphore.wait(timeout: .distantFuture)
+        _ = _internalSemaphore.wait(timeout: .distantFuture)
     }
     
     /**
