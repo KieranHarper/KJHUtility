@@ -11,7 +11,7 @@ import Foundation
 // The purpose of this class is to wrap an Array and make it available via a concurrent read vs serial write mechanism so that it can be used safely withing multithreaded contexts. Because it's a wrapper, not all features of Array are exposed, but many could be added if needed. You can also get an unsafe copy of the underlying array whenever you want to get fancier with it.
 // Dispatch barriers are used to ensure that write access waits until all other read operations are finished, and any enqueued read operations wait for the write to complete.
 // NOTE: This has to be a class rather than a struct, due to the use of closures within queues, making this a little more different than a regular Array.
-public class SafeArray<Element>: CustomStringConvertible {
+public class SafeArray<Element>: NSObject {
     
     
     // MARK: - Private variables
@@ -137,7 +137,7 @@ public class SafeArray<Element>: CustomStringConvertible {
         return toReturn
     }
     
-    public var description: String {
+    public override var description: String {
         var toReturn = ""
         _internalQueue.sync {
             toReturn =  _underlyingArray.description
