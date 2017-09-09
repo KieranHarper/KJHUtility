@@ -1,6 +1,0 @@
-framework module KJHUtility {
-  umbrella header "KJHUtility-umbrella.h"
-
-  export *
-  module * { export * }
-}
