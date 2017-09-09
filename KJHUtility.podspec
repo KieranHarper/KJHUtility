@@ -1,14 +1,11 @@
 Pod::Spec.new do |s|
   s.name         = "KJHUtility"
   s.version      = "0.1"
-  s.summary      = ""
-  s.description  = <<-DESC
-    Your description here.
-  DESC
+  s.summary      = "A small set of random utilities written in Swift."
   s.homepage     = "https://github.com/KieranHarper/KJHUtility"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Kieran Harper" => "kieranjharper@gmail.com" }
-  s.social_media_url   = ""
+  s.social_media_url   = "https://twitter.com/KieranTheTwit"
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.9"
   s.watchos.deployment_target = "2.0"
