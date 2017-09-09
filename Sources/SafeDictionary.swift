@@ -1,6 +1,6 @@
 //
 //  SafeDictionary.swift
-//  Pods
+//  KJHUtility
 //
 //  Created by Kieran Harper on 12/1/17.
 //
