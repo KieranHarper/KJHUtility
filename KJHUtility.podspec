@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "KJHUtility"
-  s.version      = "0.2"
+  s.version      = "0.3.0"
   s.summary      = "A small set of random utilities written in Swift."
   s.homepage     = "https://github.com/KieranHarper/KJHUtility"
   s.license      = { :type => "MIT", :file => "LICENSE" }
