@@ -39,12 +39,24 @@ public class Misc: NSObject {
         return true
     }
     
-    public class func getAppStoreViewLink(forAppID appID: String) -> String {
-        return String(format: "itms://itunes.apple.com/us/app/apple-store/id%@?mt=8",appID)
+    public enum AppStoreAction {
+        case writeReview
+        
+        var queryString: String {
+            switch self {
+            case .writeReview:
+                return "write-review"
+            }
+        }
     }
     
-    public class func getAppStoreRateOrReviewLink(forAppID appID: String) -> String {
-        return String(format: "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software",appID)
+    /// URL String for opening the App Store page for the given `appID`. Optionally pass an `action`, such as `.writeReview` to open the Write Review screen.
+    public func appStoreLink(forAppID appID: String, action: AppStoreAction?) -> String {
+        var urlString = "itms-apps://itunes.apple.com/app/id\(appID)"
+        if let action = action {
+            urlString.append("?action=\(action.queryString)")
+        }
+        return urlString
     }
     
     public class func getCurrentLanguage() -> String {
